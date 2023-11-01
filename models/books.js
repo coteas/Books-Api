@@ -1,15 +1,16 @@
-// require mongoose: 
+// DEPENDENCIES 
 const mongoose = require('mongoose')
 const { Schema } = mongoose 
 
-// schema:
-const booksSchema = new Schema({
-    name: { type: String, required: true },
-    greeting: String,
-    pangram: String,
-    filler: String
+// SCHEMA
+const bookSchema = new Schema({
+    title: String,
+    description: String,
+    year: Number,
+    quantity: Number,
+    imageURL: String
 })
 
-// model and export: 
-const Books = mongoose.model('Books', booksSchema)
-module.exports = Books
+// MODEL AND EXPORT 
+const Book = mongoose.model('Book', bookSchema)
+module.exports = Book
